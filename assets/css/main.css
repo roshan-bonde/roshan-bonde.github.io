@@ -1378,7 +1378,7 @@ canvas.particles-js-canvas-el {
       arshia DARK
 -------------------------*/
 
-@media (prefers-color-scheme: dark) {
+
   /* all your styles for dark mode here */
   .arshia-dark #main > section {
     background-color: #2c2d30 !important;
@@ -1471,7 +1471,7 @@ canvas.particles-js-canvas-el {
     color: white;
   }
   
-}
+
 
 /*-------------------------
      Mono Color Light
@@ -1534,7 +1534,7 @@ canvas.particles-js-canvas-el {
 /*-------------------------
       Mono Color Dark
 -------------------------*/
-@media (prefers-color-scheme: dark) {
+
 .mono.arshia-dark .text-white {
   color: #3c3c3c !important;
 }
@@ -1605,7 +1605,7 @@ canvas.particles-js-canvas-el {
 .mono.arshia-dark .circle {
   background: #e1e1e1;
 }
-}
+
 
 
 /*# sourceMappingURL=main.css.map */

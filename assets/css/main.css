@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+
 /*-------------------------
          GENERAL
 -------------------------*/
@@ -504,6 +506,10 @@ header .navbar-brand b {
   right: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+.font-handwritten{
+  font-family: 'Merienda One', cursive;
 }
 
 .hero-01 .hero-content {

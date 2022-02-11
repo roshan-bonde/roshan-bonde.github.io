@@ -30,7 +30,7 @@ main#main {
   transform: translate3d(100%, 0, 0);
   z-index: 0;
   opacity: 0;
-  background-color: #DADDFC;
+  background-color: #FAF3E0;
   transition: transform .6s ease .6s,opacity 0s ease .6s;
   padding-left: 80px;
 }

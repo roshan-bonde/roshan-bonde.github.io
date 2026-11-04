@@ -417,7 +417,7 @@ pre,
 }
 
 /* ==========================================================================
-   TERMINAL MOCKUP (Self-contained high-contrast developer console)
+   TERMINAL MOCKUP
    ========================================================================== */
 .terminal-window {
   background-color: #030712;
@@ -427,11 +427,7 @@ pre,
   overflow: hidden;
   font-family: var(--font-mono);
   font-size: 0.85rem;
-}
-
-[data-theme="light"] .terminal-window {
-  border-color: #cbd5e1;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.2), 0 8px 10px -6px rgba(15, 23, 42, 0.15);
+  transition: all var(--transition-normal);
 }
 
 .terminal-header {
@@ -441,6 +437,7 @@ pre,
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #1f2937;
+  transition: all var(--transition-normal);
 }
 
 .terminal-dots {
@@ -491,6 +488,7 @@ pre,
   padding: 1.25rem;
   color: #f8fafc;
   overflow-x: auto;
+  transition: background-color var(--transition-normal);
 }
 
 .terminal-prompt-line {
@@ -526,6 +524,76 @@ pre,
 
 .json-val-arr {
   color: #fed7aa;
+}
+
+/* --------------------------------------------------------------------------
+   Light Theme Terminal Styles (macOS / Developer Light Console)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .terminal-window {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="light"] .terminal-header {
+  background-color: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+[data-theme="light"] .dot-red {
+  background-color: #ff5f56;
+}
+
+[data-theme="light"] .dot-yellow {
+  background-color: #ffbd2e;
+}
+
+[data-theme="light"] .dot-green {
+  background-color: #27c93f;
+}
+
+[data-theme="light"] .terminal-title {
+  color: #64748b;
+}
+
+[data-theme="light"] .terminal-copy-btn {
+  color: #64748b;
+}
+
+[data-theme="light"] .terminal-copy-btn:hover {
+  color: #0f172a;
+}
+
+[data-theme="light"] .terminal-body {
+  background-color: #ffffff;
+  color: #334155;
+}
+
+[data-theme="light"] .terminal-user {
+  color: #059669;
+  font-weight: 600;
+}
+
+[data-theme="light"] .terminal-cmd {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+[data-theme="light"] .terminal-output {
+  color: #475569;
+}
+
+[data-theme="light"] .json-key {
+  color: #0284c7;
+  font-weight: 500;
+}
+
+[data-theme="light"] .json-val-str {
+  color: #16a34a;
+}
+
+[data-theme="light"] .json-val-arr {
+  color: #d97706;
 }
 
 /* ==========================================================================

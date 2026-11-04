@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects(config);
   renderExperience(config);
   renderEducation(config);
+  renderCertifications(config);
   renderContact(config);
   syncNavigationVisibility(config);
 
@@ -442,7 +443,71 @@ function renderEducation(config) {
 }
 
 /**
- * 7. Contact / Connect Section
+ * 7. Certifications Component
+ */
+function renderCertifications(config) {
+  const section = document.getElementById("certifications");
+  const grid = document.getElementById("certifications-grid");
+  if (!section || !grid) return;
+
+  if (config.sections && config.sections.certifications === false) {
+    section.style.display = "none";
+    return;
+  }
+
+  const certList = config.certifications || [];
+  grid.innerHTML = "";
+
+  certList.forEach(cert => {
+    const card = document.createElement("div");
+    card.className = "cert-card";
+
+    const badgesHtml = (cert.badges || [])
+      .map(b => `<span class="cert-badge">${escapeHtml(b)}</span>`)
+      .join("");
+
+    let dateText = escapeHtml(cert.issueDate || "");
+    if (cert.expiryDate) {
+      dateText += ` — ${escapeHtml(cert.expiryDate)}`;
+    }
+
+    let metaRowHtml = "";
+    if (cert.credentialId || cert.credentialUrl) {
+      metaRowHtml = `<div class="cert-meta-row">`;
+      if (cert.credentialId) {
+        metaRowHtml += `<span class="cert-id">ID: ${escapeHtml(cert.credentialId)}</span>`;
+      }
+      if (cert.credentialUrl) {
+        metaRowHtml += `
+          <a href="${cert.credentialUrl}" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+            <span>Verify</span> <i class="ri-external-link-line"></i>
+          </a>`;
+      }
+      metaRowHtml += `</div>`;
+    }
+
+    card.innerHTML = `
+      <div class="cert-card-header">
+        <div class="cert-icon-wrapper">
+          <i class="ri-award-line"></i>
+        </div>
+        ${dateText ? `<span class="cert-dates">${dateText}</span>` : ""}
+      </div>
+      <h3 class="cert-name">${escapeHtml(cert.name)}</h3>
+      <div class="cert-issuer">${escapeHtml(cert.issuer)}</div>
+      ${cert.description ? `<p class="cert-desc">${escapeHtml(cert.description)}</p>` : ""}
+      <div class="cert-footer">
+        ${badgesHtml ? `<div class="cert-badges">${badgesHtml}</div>` : ""}
+        ${metaRowHtml}
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+/**
+ * 8. Contact / Connect Section
  */
 function renderContact(config) {
   const section = document.getElementById("contact");
@@ -498,6 +563,7 @@ function syncNavigationVisibility(config) {
     projects: "nav-link-projects",
     experience: "nav-link-experience",
     education: "nav-link-education",
+    certifications: "nav-link-certifications",
     contact: "nav-link-contact"
   };
 

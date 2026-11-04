@@ -46,6 +46,7 @@ sections: {
   projects: true,
   experience: true,
   education: true,
+  certifications: true,
   contact: true
 }
 ```
@@ -68,20 +69,36 @@ In `assets/js/config.js`, add an object to the `projects` array:
 }
 ```
 
-### 3. Adding an Education or Certification Entry
+### 3. Adding a Certification
+In `assets/js/config.js`, add an object to the `certifications` array:
+
+```javascript
+{
+  name: "Databricks Certified Data Engineer Associate",
+  issuer: "Databricks",
+  issueDate: "2024",
+  expiryDate: "", // optional
+  credentialId: "", // optional
+  credentialUrl: "", // optional verification URL
+  description: "Expertise in using Spark and Delta Lake for production data workloads.",
+  badges: ["Databricks", "Apache Spark", "Delta Lake", "Lakehouse"]
+}
+```
+
+### 4. Adding an Education Entry
 In `assets/js/config.js`, add an object to the `education` array:
 
 ```javascript
 {
-  degree: "AWS Certified Solutions Architect – Associate",
-  institution: "Amazon Web Services",
-  period: "2024",
-  details: "Validated expertise in designing distributed, cost-optimized, and resilient cloud architectures.",
-  type: "certification"
+  degree: "Bachelor of Engineering (B.E.) — Computer Science & Engineering",
+  institution: "Government College of Engineering, Nagpur",
+  period: "2018 — 2022",
+  details: "Coursework in Distributed Systems, Operating Systems, and Databases.",
+  type: "degree"
 }
 ```
 
-### 4. Updating Skills & Profile
+### 5. Updating Skills & Profile
 Update `profile` and `skills` objects in `assets/js/config.js` with your preferred technical stack, social links, resume URL, or contact details.
 
 ---

@@ -39,6 +39,7 @@ const portfolioConfig = {
     projects: false,
     experience: true,
     education: true,
+    certifications: true,
     contact: true
   },
 
@@ -203,7 +204,7 @@ const portfolioConfig = {
   ],
 
   // ------------------------------------------------------------------
-  // 7. Education & Certifications
+  // 7. Education
   // ------------------------------------------------------------------
   education: [
     {
@@ -212,6 +213,45 @@ const portfolioConfig = {
       period: "2018 — 2022",
       details: "Comprehensive coursework in Distributed Operating Systems, Database Management Systems, Computer Networks, and Object-Oriented Software Engineering.",
       type: "degree"
+    }
+  ],
+
+  // ------------------------------------------------------------------
+  // 8. Certifications & Accreditations
+  // Add, edit, or remove your certifications here
+  // ------------------------------------------------------------------
+  certifications: [
+    {
+      name: "Generative AI Leader Certification",
+      issuer: "Google Cloud Skill Boost",
+      issueDate: "2026",
+      expiryDate: "2029",
+      credentialId: "",
+      credentialUrl: "https://www.credly.com/badges/7853d994-9597-42e9-922f-62570b976772/linked_in_profile?trk=public_profile_see-credential", // Add verification link if available
+      description: "A professional who drives business innovation and responsible AI adoption by leveraging Google Cloud’s generative AI solutions to identify opportunities and lead AI-powered transformation initiatives.",
+      badges: ["AI Ethics", "Artificial Intelligence (AI)", "Cloud Computing", "Generative AI"]
+    },
+    {
+      name: "Databricks Certified Data Engineer Professional",
+      issuer: "Databricks",
+      issueDate: "2026",
+      expiryDate: "2028",
+      credentialId: "",
+      credentialUrl: "https://credentials.databricks.com/8da581d3-27ef-44ed-a61b-4650ae5eb80e#acc.frPMOTcp", // Add verification link if available
+      description: "Validates advanced expertise in building scalable, secure, and optimized data engineering solutions on the Databricks Lakehouse Platform using ETL, streaming, governance, and performance best practices.",
+      badges: ["Change Data Feed (CDF)", "Lakeflow Pipelines", "Liquid Clustering",
+        "Lakehouse Federation"]
+    },
+    {
+      name: "Databricks Certified Data Engineer Associate",
+      issuer: "Databricks",
+      issueDate: "2026",
+      expiryDate: "2028",
+      credentialId: "",
+      credentialUrl: "https://credentials.databricks.com/545010df-c056-4b36-b431-d0ad89accba3#acc.O5lKFn2y",
+      description: "Validates foundational expertise in building, managing, and optimizing data pipelines on Databricks, with skills in PySpark-based ETL, data modeling, governance, security, and workload optimization.",
+      badges: ["Apache Spark", "Delta Lake", "Lakehouse", "Delta Live Tables",
+        "Lakeflow Connect", "Declarative Automation Bundles", "Unity Catalog"]
     }
   ]
 };

@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initMobileNav();
   initToast();
+  initHeroMediaSwitch(config);
 
   // Render components based on configuration
   renderProfile(config);
@@ -86,6 +87,49 @@ function initMobileNav() {
       toggle.innerHTML = '<i class="ri-menu-line"></i>';
     });
   });
+}
+
+/* ==========================================================================
+   HERO MEDIA SWITCHER (Terminal <-> Photo Toggle)
+   ========================================================================== */
+function initHeroMediaSwitch(config) {
+  const tabTerminal = document.getElementById("switch-tab-terminal");
+  const tabPhoto = document.getElementById("switch-tab-photo");
+  const cardTerminal = document.getElementById("hero-terminal");
+  const cardPhoto = document.getElementById("hero-photo");
+
+  if (!tabTerminal || !tabPhoto || !cardTerminal || !cardPhoto) return;
+
+  function setMediaView(view) {
+    if (view === "photo") {
+      tabPhoto.classList.add("active");
+      tabPhoto.setAttribute("aria-selected", "true");
+      tabTerminal.classList.remove("active");
+      tabTerminal.setAttribute("aria-selected", "false");
+
+      cardPhoto.classList.add("active");
+      cardTerminal.classList.remove("active");
+      localStorage.setItem("heroMediaMode", "photo");
+    } else {
+      tabTerminal.classList.add("active");
+      tabTerminal.setAttribute("aria-selected", "true");
+      tabPhoto.classList.remove("active");
+      tabPhoto.setAttribute("aria-selected", "false");
+
+      cardTerminal.classList.add("active");
+      cardPhoto.classList.remove("active");
+      localStorage.setItem("heroMediaMode", "terminal");
+    }
+  }
+
+  tabTerminal.addEventListener("click", () => setMediaView("terminal"));
+  tabPhoto.addEventListener("click", () => setMediaView("photo"));
+
+  // Check saved preference or fallback to terminal
+  const savedMode = localStorage.getItem("heroMediaMode");
+  if (savedMode === "photo") {
+    setMediaView("photo");
+  }
 }
 
 /* ==========================================================================
@@ -162,6 +206,17 @@ function renderProfile(config) {
     }
   }
 
+  // Avatar Headshot Photo
+  const avatarImg = document.getElementById("hero-avatar-img");
+  const photoBadgeText = document.getElementById("photo-badge-text");
+  if (avatarImg && profile.avatar) {
+    avatarImg.src = profile.avatar;
+    if (profile.name) avatarImg.alt = profile.name;
+  }
+  if (photoBadgeText && profile.name) {
+    photoBadgeText.textContent = `${profile.name} // ${profile.role || 'Data & DevOps'}`;
+  }
+
   // Resume button in nav
   const resumeBtn = document.getElementById("nav-resume-btn");
   if (resumeBtn && profile.resumeUrl && profile.resumeUrl !== "#") {
@@ -177,10 +232,14 @@ function renderProfile(config) {
  */
 function renderTerminal(config) {
   const terminalSection = document.getElementById("hero-terminal");
+  const photoSection = document.getElementById("hero-photo");
+  const switcher = document.querySelector(".hero-media-switcher");
   if (!terminalSection) return;
 
   if (config.sections && config.sections.terminal === false) {
-    terminalSection.style.display = "none";
+    if (switcher) switcher.style.display = "none";
+    terminalSection.classList.remove("active");
+    if (photoSection) photoSection.classList.add("active");
     return;
   }
 

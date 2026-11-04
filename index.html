@@ -89,9 +89,19 @@
           </div>
         </div>
 
-        <!-- Interactive Terminal Mockup -->
-        <div id="hero-terminal" class="terminal-wrapper">
-          <div class="terminal-window">
+        <!-- Hero Media Switcher (Terminal <-> Headshot) -->
+        <div class="hero-media-wrapper">
+          <div class="hero-media-switcher" role="tablist" aria-label="Hero Media View">
+            <button id="switch-tab-terminal" class="media-tab-btn active" role="tab" aria-selected="true" aria-controls="hero-terminal">
+              <i class="ri-terminal-box-line"></i> <span>Terminal</span>
+            </button>
+            <button id="switch-tab-photo" class="media-tab-btn" role="tab" aria-selected="false" aria-controls="hero-photo">
+              <i class="ri-user-smile-line"></i> <span>Photo</span>
+            </button>
+          </div>
+
+          <!-- Interactive Terminal Mockup -->
+          <div id="hero-terminal" class="hero-media-card terminal-window active" role="tabpanel" aria-labelledby="switch-tab-terminal">
             <div class="terminal-header">
               <div class="terminal-dots">
                 <span class="terminal-dot dot-red"></span>
@@ -109,6 +119,17 @@
                 <span id="terminal-cmd" class="terminal-cmd">curl -s https://api.roshan.dev/status | jq .</span>
               </div>
               <pre id="terminal-output" class="terminal-output"></pre>
+            </div>
+          </div>
+
+          <!-- Headshot Photo Card -->
+          <div id="hero-photo" class="hero-media-card photo-card" role="tabpanel" aria-labelledby="switch-tab-photo">
+            <div class="photo-card-inner">
+              <img id="hero-avatar-img" src="assets/img/personal-image.jpg" alt="Roshan Bonde" class="hero-avatar-photo">
+              <div class="photo-badge">
+                <span class="status-dot"></span>
+                <span id="photo-badge-text">Roshan Bonde // Data & DevOps</span>
+              </div>
             </div>
           </div>
         </div>

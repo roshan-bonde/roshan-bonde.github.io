@@ -417,6 +417,154 @@ pre,
 }
 
 /* ==========================================================================
+   HERO MEDIA SWITCHER (Terminal <-> Headshot)
+   ========================================================================== */
+.hero-media-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-media-switcher {
+  display: inline-flex;
+  align-self: flex-end;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-prominent);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.media-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.media-tab-btn:hover {
+  color: var(--text-main);
+}
+
+.media-tab-btn.active {
+  background-color: var(--bg-surface-elevated);
+  color: var(--accent-cyan);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .media-tab-btn.active {
+  background-color: #ffffff;
+  color: var(--accent-cyan);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.1);
+}
+
+.hero-media-card {
+  display: none;
+}
+
+.hero-media-card.active {
+  display: block;
+  animation: heroCardFadeIn 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes heroCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   HEADSHOT PHOTO CARD
+   ========================================================================== */
+.photo-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-prominent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md), 0 0 25px rgba(56, 189, 248, 0.08);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+[data-theme="light"] .photo-card {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.05);
+}
+
+.photo-card-inner {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+  background: radial-gradient(circle at 50% 35%, var(--bg-surface-elevated), var(--bg-surface));
+}
+
+[data-theme="light"] .photo-card-inner {
+  background: radial-gradient(circle at 50% 35%, #f1f5f9, #ffffff);
+}
+
+.hero-avatar-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 3px solid var(--accent-cyan);
+  box-shadow: 0 0 30px var(--accent-cyan-glow);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.hero-avatar-photo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px var(--accent-cyan);
+}
+
+.photo-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-prominent);
+  color: var(--text-main);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+[data-theme="light"] .photo-badge {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: #cbd5e1;
+  color: #0f172a;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+/* ==========================================================================
    TERMINAL MOCKUP
    ========================================================================== */
 .terminal-window {

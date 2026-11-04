@@ -36,7 +36,22 @@ A sleek, minimal, high-performance developer portfolio website designed for a **
 
 All data is managed inside **`assets/js/config.js`**. You do not need to touch `index.html` to add, edit, or remove content.
 
-### 1. Toggle Sections On or Off
+### 1. Reordering Sections on the Page & Navbar
+In `assets/js/config.js`, simply rearrange the strings in the `sectionOrder` array. Both the page layout and the top navigation bar will automatically update to follow this sequence:
+
+```javascript
+sectionOrder: [
+  "experience",      // Shows first after Hero
+  "skills",          // Shows second
+  "certifications",  // Shows third
+  "awards",
+  "education",
+  "projects",
+  "contact"
+]
+```
+
+### 2. Toggle Sections On or Off
 In `assets/js/config.js`, adjust the `sections` object. If a section is set to `false`, both the section and its corresponding navigation link are automatically hidden:
 
 ```javascript
@@ -47,6 +62,7 @@ sections: {
   experience: true,
   education: true,
   certifications: true,
+  awards: true,
   contact: true
 }
 ```
@@ -85,7 +101,21 @@ In `assets/js/config.js`, add an object to the `certifications` array:
 }
 ```
 
-### 4. Adding an Education Entry
+### 4. Adding an Award or Recognition
+In `assets/js/config.js`, add an object to the `awards` array:
+
+```javascript
+{
+  title: "Spot Award for Technical Excellence",
+  organization: "Persistent Systems",
+  date: "2024",
+  category: "Corporate Excellence",
+  description: "Recognized for optimizing distributed data pipelines and cloud delivery.",
+  badges: ["Persistent Systems", "Data Engineering"]
+}
+```
+
+### 5. Adding an Education Entry
 In `assets/js/config.js`, add an object to the `education` array:
 
 ```javascript

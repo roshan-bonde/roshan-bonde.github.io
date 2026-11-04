@@ -30,9 +30,22 @@ const portfolioConfig = {
   },
 
   // ------------------------------------------------------------------
-  // 2. Section Visibility Toggles
-  // Set to true to display, false to hide (section and nav link will hide automatically)
+  // 2. Section Sequence & Visibility
+  // Reorder the names in this array to change the order on the page and in the navbar!
+  // Available section keys:
+  // "skills", "experience", "projects", "education", "certifications", "awards", "contact"
   // ------------------------------------------------------------------
+  sectionOrder: [
+    "skills",
+    "experience",
+    "projects",
+    "awards",
+    "certifications",
+    "education",
+    "contact"
+  ],
+
+  // Set to true to display, false to hide (section and nav link will hide automatically)
   sections: {
     terminal: true,
     skills: true,
@@ -40,6 +53,7 @@ const portfolioConfig = {
     experience: true,
     education: true,
     certifications: true,
+    awards: true,
     contact: true
   },
 
@@ -252,6 +266,37 @@ const portfolioConfig = {
       description: "Validates foundational expertise in building, managing, and optimizing data pipelines on Databricks, with skills in PySpark-based ETL, data modeling, governance, security, and workload optimization.",
       badges: ["Apache Spark", "Delta Lake", "Lakehouse", "Delta Live Tables",
         "Lakeflow Connect", "Declarative Automation Bundles", "Unity Catalog"]
+    }
+  ],
+
+  // ------------------------------------------------------------------
+  // 9. Awards & Recognition
+  // Add, edit, or remove your accolades and recognitions here
+  // ------------------------------------------------------------------
+  awards: [
+    {
+      title: "Top talent FY26",
+      organization: "Persistent Systems",
+      date: "2026",
+      category: "Corporate Excellence",
+      description: "Recognized for exceptional contribution and strong business understanding.",
+      badges: ["Excellence"]
+    },
+    {
+      title: "Bravo Team Award",
+      organization: "Persistent Systems",
+      date: "2024",
+      category: "Corporate Excellence",
+      description: "Excellent Team Player.",
+      badges: ["Team Award"]
+    },
+    {
+      title: "High Five Award",
+      organization: "Persistent Systems",
+      date: "2024",
+      category: "Corporate Excellence",
+      description: "Excellent Team Player.",
+      badges: ["Team Award"]
     }
   ]
 };

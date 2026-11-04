@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderExperience(config);
   renderEducation(config);
   renderCertifications(config);
+  renderAwards(config);
   renderContact(config);
-  syncNavigationVisibility(config);
+  applySectionOrder(config);
 
   // Footer dynamic year
   const yearEl = document.getElementById("current-year");
@@ -507,7 +508,51 @@ function renderCertifications(config) {
 }
 
 /**
- * 8. Contact / Connect Section
+ * 8. Awards & Recognition Component
+ */
+function renderAwards(config) {
+  const section = document.getElementById("awards");
+  const grid = document.getElementById("awards-grid");
+  if (!section || !grid) return;
+
+  if (config.sections && config.sections.awards === false) {
+    section.style.display = "none";
+    return;
+  }
+
+  const awardsList = config.awards || [];
+  grid.innerHTML = "";
+
+  awardsList.forEach(award => {
+    const card = document.createElement("div");
+    card.className = "award-card";
+
+    const badgesHtml = (award.badges || [])
+      .map(b => `<span class="award-badge">${escapeHtml(b)}</span>`)
+      .join("");
+
+    card.innerHTML = `
+      <div class="award-card-header">
+        <div class="award-icon-wrapper">
+          <i class="ri-trophy-line"></i>
+        </div>
+        ${award.category ? `<span class="award-category-pill">${escapeHtml(award.category)}</span>` : ""}
+      </div>
+      <h3 class="award-title">${escapeHtml(award.title)}</h3>
+      <div class="award-org">${escapeHtml(award.organization)}</div>
+      ${award.description ? `<p class="award-desc">${escapeHtml(award.description)}</p>` : ""}
+      <div class="award-footer">
+        ${badgesHtml ? `<div class="award-badges">${badgesHtml}</div>` : ""}
+        ${award.date ? `<span class="award-date">${escapeHtml(award.date)}</span>` : ""}
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+/**
+ * 9. Contact / Connect Section
  */
 function renderContact(config) {
   const section = document.getElementById("contact");
@@ -554,27 +599,74 @@ function renderContact(config) {
 }
 
 /**
- * Sync Navigation items visibility with config.sections
+ * Reorder both page sections and navigation links according to config.sectionOrder
+ * and sync visibility with config.sections.
  */
-function syncNavigationVisibility(config) {
-  const sections = config.sections || {};
-  const mapping = {
+function applySectionOrder(config) {
+  const defaultOrder = [
+    "skills",
+    "experience",
+    "projects",
+    "education",
+    "certifications",
+    "awards",
+    "contact"
+  ];
+
+  const order = Array.isArray(config.sectionOrder) && config.sectionOrder.length > 0
+    ? config.sectionOrder
+    : defaultOrder;
+
+  const mainEl = document.querySelector("main");
+  const navMenu = document.getElementById("nav-menu");
+  const sectionsConfig = config.sections || {};
+
+  const sectionIdMap = {
+    skills: "skills",
+    projects: "projects",
+    experience: "experience",
+    education: "education",
+    certifications: "certifications",
+    awards: "awards",
+    contact: "contact"
+  };
+
+  const navLinkIdMap = {
     skills: "nav-link-skills",
     projects: "nav-link-projects",
     experience: "nav-link-experience",
     education: "nav-link-education",
     certifications: "nav-link-certifications",
+    awards: "nav-link-awards",
     contact: "nav-link-contact"
   };
 
-  Object.entries(mapping).forEach(([key, elementId]) => {
-    const el = document.getElementById(elementId);
-    if (el) {
-      if (sections[key] === false) {
-        el.style.display = "none";
-      } else {
-        el.style.display = "";
-      }
+  // Reorder sections in <main> and links in #nav-menu
+  order.forEach(key => {
+    const secId = sectionIdMap[key];
+    const navId = navLinkIdMap[key];
+
+    const secEl = secId ? document.getElementById(secId) : null;
+    const navEl = navId ? document.getElementById(navId) : null;
+
+    if (secEl && mainEl) {
+      mainEl.appendChild(secEl);
+      secEl.style.display = sectionsConfig[key] === false ? "none" : "";
+    }
+
+    if (navEl && navMenu) {
+      navMenu.appendChild(navEl);
+      navEl.style.display = sectionsConfig[key] === false ? "none" : "";
+    }
+  });
+
+  // If any section was omitted from sectionOrder, hide it
+  Object.keys(sectionIdMap).forEach(key => {
+    if (!order.includes(key)) {
+      const secEl = document.getElementById(sectionIdMap[key]);
+      const navEl = document.getElementById(navLinkIdMap[key]);
+      if (secEl) secEl.style.display = "none";
+      if (navEl) navEl.style.display = "none";
     }
   });
 }

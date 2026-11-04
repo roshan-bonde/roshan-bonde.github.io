@@ -1,744 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="theme-color" content="#03045E" />
-        <title>Roshan Bonde</title>
-        <meta name="description" content="A protfolio website." />
-        <meta name="keywords" content="Portfolio, Roshan Bonde" />
-        <meta name="author" content="Roshan Bonde" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roshan Bonde — Data Engineer & DevOps Engineer</title>
+  <meta name="description" content="Personal portfolio of Roshan Bonde, Data Engineer & DevOps Engineer specializing in scalable distributed data pipelines, cloud-native infrastructure, and GitOps automation.">
+  <meta name="keywords" content="Roshan Bonde, Data Engineer, DevOps Engineer, Apache Spark, Kafka, Kubernetes, Terraform, Airflow, Delta Lake, AWS, Python, SQL">
+  <meta name="author" content="Roshan Bonde">
 
-        <!--  FavIcon  -->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Roshan Bonde — Data Engineer & DevOps Engineer">
+  <meta property="og:description" content="Architecting resilient distributed data pipelines, cloud-native infrastructure, and automated GitOps platforms.">
+  <meta property="og:image" content="assets/img/personal-image.jpg">
+  <meta name="theme-color" content="#090d16">
 
-        <!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+  <!-- RemixIcon CDN (lightweight vector icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
 
-        <!-- Plugin Css -->
-        <link rel="stylesheet" href="assets/css/plugins.css">
-        <!-- Colors Css -->
-        <link rel="stylesheet" href="assets/css/color/pink-color.css" id="option-color">
-        <!--  Custom Style CSS  -->
-        <link rel="stylesheet" href="assets/css/main.css">
-    </head>
-    <body data-spy="scroll" data-target="#scrollspy" data-offset="1" class="mono">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
-    <!--  Pre Loader  -->
-    <div id="overlayer"></div>
-    <span class="loader"></span>
+  <!-- Background Pattern -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
 
-    <main id="main">
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-link" aria-label="Roshan Bonde Home">
+        <span class="brand-prompt">roshan@data:~#</span>
+        <span class="brand-dot"></span>
+      </a>
 
-        <!--   Header Start -->
-        <header>
-            <div class="header-navbar h-100">
-                <ul class="list-group menu text-center" id="menu">
-                    <li class="list-group-item"><a class="active" href="#home"><i class="ri-home-5-line ri-lg"></i><span>Home</span></a></li>
-                    <li class="list-group-item"><a href="#about"><i class="ri-user-3-line ri-lg"></i><span>About</span></a></li>
-                    <li class="list-group-item"><a href="#portfolio"><i class="ri-code-s-slash-line ri-lg"></i><span>Experience</span></a></li>
-                    <li class="list-group-item"><a href="#contact"><i class="ri-chat-new-line ri-lg"></i><span>Contact</span></a></li>
-                </ul>
-                
-                <div class="menu-toggler">
-                    <span>
-                        <i class="ri-menu-unfold-line "></i>
-                    </span>
-                </div>
-    
-                <!--   Color Scheme  -->
-                <div class="mt-5 mb-3">
-                    <a class="color-scheme hide text-white d-inline-block" href="#">
-                        <i class="ri-toggle-line ri-xl"></i>
-                    </a>
-                    <a class="color-scheme hide color-scheme-light text-white d-none" href="#">
-                        <i class="ri-toggle-fill ri-xl"></i>
-                    </a>
-                </div>
-                
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li id="nav-link-skills"><a href="#skills" class="nav-link">Skills</a></li>
+          <li id="nav-link-projects"><a href="#projects" class="nav-link">Projects</a></li>
+          <li id="nav-link-experience"><a href="#experience" class="nav-link">Experience</a></li>
+          <li id="nav-link-education"><a href="#education" class="nav-link">Education</a></li>
+          <li id="nav-link-contact"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" id="nav-resume-btn" class="btn btn-outline" style="padding: 0.4rem 0.85rem; font-size: 0.8rem; display: none;">Resume</a>
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Color Theme" title="Toggle Theme">
+          <i class="ri-sun-line"></i>
+        </button>
+        <button id="mobile-menu-toggle" class="btn-icon mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-info">
+          <div id="hero-status-badge" class="status-badge">
+            <span class="status-dot"></span>
+            <span>Available for Data & DevOps Engineering Roles</span>
+          </div>
+
+          <h1 id="hero-name" class="hero-title">Roshan Bonde</h1>
+          <div id="hero-role" class="hero-role">
+            <i class="ri-terminal-box-line"></i>
+            <span>Data Engineer & DevOps Engineer</span>
+          </div>
+          <p id="hero-tagline" class="hero-tagline">
+            Designing resilient distributed data pipelines, cloud-native infrastructure, and automated GitOps platforms.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="ri-git-repository-line"></i> View Projects
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="ri-mail-send-line"></i> Get in Touch
+            </a>
+          </div>
+
+          <div id="hero-socials" class="hero-socials">
+            <!-- Populated dynamically from config.js -->
+          </div>
+        </div>
+
+        <!-- Interactive Terminal Mockup -->
+        <div id="hero-terminal" class="terminal-wrapper">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+              </div>
+              <span class="terminal-title">bash — 80x24</span>
+              <button id="terminal-copy-btn" class="terminal-copy-btn" title="Copy Command" aria-label="Copy Command">
+                <i class="ri-file-copy-line"></i>
+              </button>
             </div>
-        </header>
-        <!--   Header End   -->
-
-       <!--  Home Start  -->
-       <section id="home" class="section hero-06 active">
-        <div class="display-table">
-            <div class="display-content">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 order-2 order-lg-1">
-                                <div class="hero-content">
-                                    <h1 class="rainbow-text mb-3">I'm <span class="font-handwritten">Roshan Bonde</span></h1>
-                                    <h4 class="text-capitalize mb-0">A <span class="gradient-text"><span class="element" data-elements="UI Designer.,Web Designer.,Web Developer.,Data Science Enthusiast."></span></span></h4></h4>
-                                    <p class="max-width-450 mx-0 my-4">&nbsp;</p>
-                                    <ul class="list-inline hero-social">
-                                        <li class="list-inline-item">
-                                            <a href="https://linkedin.com/in/roshan-bonde-760640172">
-                                                <img src="assets/img/linkedin.svg" alt="">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="https://github.com/roshan-bonde">
-                                                <img src="assets/img/github.svg" alt="">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="https://www.facebook.com/roshan.bonde.54/">
-                                                <img src="assets/img/facebook.svg" alt="">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="https://www.instagram.com/roshanb392/">
-                                                <img src="assets/img/instagram.svg" alt="">
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="https://t.me/roshanb392">
-                                                <img src="assets/img/telegram.svg" alt="">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 order-1 order-lg-2">
-                                <div class="hero-images">
-                                    <div class="rounded-circle">
-                                        <img src="assets/img/personal-image.jpg" alt="/" class="rounded-circle img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="terminal-body">
+              <div class="terminal-prompt-line">
+                <span class="terminal-user"><span id="terminal-user">roshan</span>@<span id="terminal-host">data-node-01</span>:~$</span>
+                <span id="terminal-cmd" class="terminal-cmd">curl -s https://api.roshan.dev/status | jq .</span>
+              </div>
+              <pre id="terminal-output" class="terminal-output"></pre>
             </div>
-        </section>
-        <!--  Home End  -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!--   About Start   -->
-        <section id="about" class="about">
-            <div class="display-table">
-                <div class="display-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="text-center title">
-                                    <h2 class="text-dark">About</h2>
-                                    <p class="text-muted max-width-450 mb-5">&nbsp;</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="image-border">
-                                    <img src="assets/img/about.jpg" alt="/">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mt-4 mt-lg-0">
-                                <div class="personal-item ">
-                                    <h3 class="text-dark mt-4 mt-lg-0">Personal Information</h3>
-                                    <div class="row">
-                                        <div class="col-6 personal-info">
-                                            <ul class="list-unstyled pt-4">
-                                                <li>
-                                                    <p>Name : <span> Roshan Bonde</span></p>
-                                                </li>
-                                                <li>
-                                                    <p>Age : <span> 20</span></p>
-                                                </li>
-                                                <li>
-                                                    <p>Location : <span> India</span></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="button-border mt-3 mb-lg-0 mr-4">
-                                    <a href="javascript:void(0);" class="pill-button">Download Resume</a>
-                                </div>
-                                <div class="button-border mt-3 mb-lg-0 to-contact">
-                                    <a href="#contact" class="pill-button">Get In Touch</a>
-                                </div>
-                            </div>
-                        </div>
-                        
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// Capabilities</span>
+          <h2 class="section-title">Technical Expertise</h2>
+          <p class="section-subtitle">
+            Core technologies and architectures I leverage to build scalable data platforms and resilient infrastructure.
+          </p>
+        </div>
+        <div id="skills-grid" class="skills-grid">
+          <!-- Populated dynamically from config.js -->
+        </div>
+      </div>
+    </section>
 
-                        <!--  Education Start  -->
-                        <div class="container">
-                            <div>
-                                <h3 class="mt-5">Education</h3>
-                            </div>
-                            <div class="row">                                         
-                                <div class="col mt-0">
-                                    <div id="skills" class="education-box box-border">
-                                        <h5 class="pt-0">Bachelor of Engineering</h5>
-                                        <p class="text-muted">2018 - 2022</p>
-                                        <p class="text-muted">Computer Science & Engineering</p>
-                                        <p class="text-muted">Government College of Engineering, Nagpur.</p>
-                                    </div>
-                                </div>
-                                <div class="col mt-0">
-                                    <div id="skills" class="education-box box-border">
-                                        <h5 class="pt-0">Higher Secondary Certificate (HSC)</h5>
-                                        <p class="text-muted">2016 - 2018</p>
-                                        <p class="text-muted">Computer Science</p>
-                                        <p class="text-muted">St. Francis De Sales College.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--   Education End   -->
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// Implementations</span>
+          <h2 class="section-title">Featured Architectures & Projects</h2>
+          <p class="section-subtitle">
+            Data systems, streaming architectures, and cloud infrastructure engineered for production reliability and scale.
+          </p>
+        </div>
+        <div id="projects-grid" class="projects-grid">
+          <!-- Populated dynamically from config.js -->
+        </div>
+      </div>
+    </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// Track Record</span>
+          <h2 class="section-title">Experience & Milestones</h2>
+          <p class="section-subtitle">
+            Professional trajectory in data platform engineering, systems development, and infrastructure.
+          </p>
+        </div>
+        <div id="experience-timeline" class="timeline-wrapper">
+          <!-- Populated dynamically from config.js -->
+        </div>
+      </div>
+    </section>
 
-                        <div class="display-table">
-                            <div class="display-content">
-                                <div class="container">
-                                    <!--  Skill Start  -->
-                                    <div class="row">
-                                        <!-- Skill -->
-                                        <div class="col-lg-6">
-                                            <div>
-                                                <h3 class="mb-0">Work <span class="base-color"> Skills</span></h3>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div id="skills" class="skill-box box-border">
-                                                    <div class="skillbar clearfix" data-percent="90%">
-                                                        <div class="skillbar-title"><span>HTML</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">90%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix " data-percent="60%">
-                                                        <div class="skillbar-title"><span>CSS</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">60%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="50%">
-                                                        <div class="skillbar-title"><span>Javascript</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">50%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="60%">
-                                                        <div class="skillbar-title"><span>PHP</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">60%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="80%">
-                                                        <div class="skillbar-title"><span>MySQL</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">80%</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div id="skills" class="skill-box box-border">
-                                                    <div class="skillbar clearfix" data-percent="85%">
-                                                        <div class="skillbar-title"><span>C</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">85%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix " data-percent="85%">
-                                                        <div class="skillbar-title"><span>C++</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">85%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="50%">
-                                                        <div class="skillbar-title"><span>Python</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">50%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="20%">
-                                                        <div class="skillbar-title"><span>Java</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">20%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="50%">
-                                                        <div class="skillbar-title"><span>XAMPP</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">50%</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div>
-                                                <h3 class="mb-0">&nbsp;</h3>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div id="skills" class="skill-box box-border">
-                                                    <div class="skillbar clearfix" data-percent="35%">
-                                                        <div class="skillbar-title"><span>Numpy</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">35%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix " data-percent="40%">
-                                                        <div class="skillbar-title"><span>Pandas</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">40%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="45%">
-                                                        <div class="skillbar-title"><span>Matplotlib</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">45%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="50%">
-                                                        <div class="skillbar-title"><span>Seaborn</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">50%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="15%">
-                                                        <div class="skillbar-title"><span>Sci-kit Learn</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">15%</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div id="skills" class="skill-box box-border">
-                                                    <div class="skillbar clearfix" data-percent="60%">
-                                                        <div class="skillbar-title"><span>Web Development</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">60%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix " data-percent="45%">
-                                                        <div class="skillbar-title"><span>Web Designing</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">45%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="75%">
-                                                        <div class="skillbar-title"><span>Teaching Skills</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">75%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="80%">
-                                                        <div class="skillbar-title"><span>Programming</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">80%</div>
-                                                    </div>
-                                                    <div class="skillbar clearfix" data-percent="100%">
-                                                        <div class="skillbar-title"><span>Passion</span></div>
-                                                        <div class="skillbar-bar fill-skillbar"></div>
-                                                        <div class="skill-bar-percent">100%</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 mt-5">
-                                            <div>
-                                                <h3 class="mb-0 mt-5 mt-lg-0">Language <span class="base-color"> Skills</span></h3>
-                                            </div>
-                                            <div class="language-bar box-border">
-                                                <div class="language-skill row">
-                                                    <h4 class="col-5 text-left mb-0">English <span> Fluent</span></h4>
-                                                    <ul class="col-7 list-inline text-right mb-0">
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-line"></i>
-                                                        </li>
-                                                </div>
-                                                <div class="language-skill row">
-                                                    <h4 class="col-5 text-left mb-0">Hindi <span> Fluent</span></h4>
-                                                    <ul class="col-7 list-inline text-right mb-0">
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-half-fill"></i>
-                                                        </li>
-                                                </div>
-                                                <div class="language-skill row">
-                                                    <h4 class="col-5 text-left mb-0">Marathi <span> Fluent</span></h4>
-                                                    <ul class="col-7 list-inline text-right mb-0">
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-fill"></i>
-                                                        </li>
-                                                        <li class="list-inline-item">
-                                                            <i class="ri-star-half-fill"></i>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--   Skill End   -->
-                                </div>
-                            </div>
-                        </div>
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">// Background</span>
+          <h2 class="section-title">Education & Foundation</h2>
+          <p class="section-subtitle">
+            Academic degree and foundational computer science studies.
+          </p>
+        </div>
+        <div id="education-timeline" class="timeline-wrapper">
+          <!-- Populated dynamically from config.js -->
+        </div>
+      </div>
+    </section>
 
-                        <!--  Service Start  -->
-                        <div class="services">
-                            <div class="row mt-5 ">
-                                <div class="col-12">
-                                    <h3 class="mb-0 text-dark">What <span class="base-color">I'm Doing</span></h3>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <!-- Item 01 -->
-                                <div class="col-lg-4 text-left">
-                                    <div class="services-item box-hover-border">
-                                        <div class="float-left mt-lg-2 d-inline-block">
-                                            <i class="ri-code-line ri-xl"></i>
-                                        </div>
-                                        <div class="services-content">
-                                            <h5 class="mb-3">Web Development</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Item 02 -->
-                                <div class="col-lg-4 text-left">
-                                    <div class="services-item box-hover-border">
-                                        <div class="float-left mt-lg-2 d-inline-block">
-                                            <i class="ri-checkbox-circle-line ri-xl"></i>
-                                        </div>
-                                        <div class="services-content">
-                                            <h5 class="mb-3">Bootstrap support</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Item 03 -->
-                                <div class="col-lg-4 text-left">
-                                    <div class="services-item box-hover-border">
-                                        <div class="float-left mt-lg-2 d-inline-block">
-                                            <i class="ri-tools-line ri-xl"></i>
-                                        </div>
-                                        <div class="services-content">
-                                            <h5 class="mb-3">Optimization</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Item 04 -->
-                                <div class="col-lg-4 text-left">
-                                    <div class="services-item box-hover-border">
-                                        <div class="float-left mt-lg-2  d-inline-block">
-                                            <i class="ri-smartphone-line ri-xl"></i>
-                                        </div>
-                                        <div class="services-content">
-                                            <h5 class="mb-3">Responsive Theme</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Item 05 -->
-                                <div class="col-lg-4 text-left">
-                                    <div class="services-item box-hover-border">
-                                        <div class="float-left mt-lg-2 d-inline-block">
-                                            <i class="ri-spy-line ri-xl"></i>
-                                        </div>
-                                        <div class="services-content">
-                                            <h5 class="mb-3">Data Analysis</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Item 06 -->
-                                <div class="col-lg-4 text-left">
-                                    <div class="services-item box-hover-border">
-                                        <div class="float-left mt-lg-2 d-inline-block">
-                                            <i class="ri-bar-chart-grouped-line ri-xl"></i>
-                                        </div>
-                                        <div class="services-content">
-                                            <h5 class="mb-3">Data Visualisation</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--   Service End   -->
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card">
+          <span class="section-label">// Connect</span>
+          <h3>Let's Build Resilient Data Systems</h3>
+          <p>
+            Whether you want to discuss distributed lakehouses, Kubernetes infrastructure, streaming pipelines, or potential collaborations—reach out directly.
+          </p>
+          <div class="email-copy-box">
+            <span id="contact-email-text" class="email-text">roshanbonde30@gmail.com</span>
+            <button id="copy-email-btn" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">
+              <i class="ri-file-copy-line"></i> Copy
+            </button>
+          </div>
+          <div id="contact-social-links" class="contact-links">
+            <!-- Populated dynamically from config.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                        <!--   Client Start  -->
-                        <div class="testimonial mt-5">
-                            <div class="col-12">
-                                <h3 class="mb-0 text-dark">Client <span class="base-color">Says</span></h3>
-                            </div>
-                            <div class="owl-carousel">
-                                <!-- Testimonial Item-01 -->
-                                <div class="testimonial-item box-border">
-                                    <div class="testimonial-image">
-                                        <div class="testimonial-image-border">
-                                            <img src="assets/img/client-male.png" alt="/">
-                                        </div>
-                                    </div>
-                                    <p class="mb-0 mt-2 text-muted">" Yet to come."</p>
-                                    <span class="d-block mt-3 font-weight-bold mr-2">Xyz Abc,<small class="text-muted"> Someting at XYZ</small></span>
-                                </div>
-                                <!-- Testimonial Item-02 -->
-                                <div class="testimonial-item box-border">
-                                    <div class="testimonial-image">
-                                        <div class="testimonial-image-border">
-                                            <img src="assets/img/client-female.png" alt="/">
-                                        </div>
-                                    </div>
-                                    <p class="mb-0 mt-2 text-muted">" Yet to come."</p>
-                                    <span class="d-block mt-3 font-weight-bold mr-2">Xyz Abc, <small class="text-muted"> Someting at XYZ</small></span>
-                                </div>
-                                <!-- Testimonial Item-03 -->
-                                <div class="testimonial-item box-border">
-                                    <div class="testimonial-image">
-                                        <div class="testimonial-image-border">
-                                            <img src="assets/img/client-male.png" alt="/">
-                                        </div>
-                                    </div>
-                                    <p class="mb-0 mt-2 text-muted">" Yet to come."</p>
-                                    <span class="d-block mt-3 font-weight-bold mr-2">Xyz Abc, <small class="text-muted"> Someting at XYZ</small></span>
-                                </div>
-                                <!-- Testimonial Item-04 -->
-                                <div class="testimonial-item box-border">
-                                    <div class="testimonial-image">
-                                        <div class="testimonial-image-border">
-                                            <img src="assets/img/client-female.png" alt="/">
-                                        </div>
-                                    </div>
-                                    <p class="mb-0 mt-2 text-muted">" Yet to come."</p>
-                                    <span class="d-block mt-3 font-weight-bold mr-2">Xyz Abc, <small class="text-muted"> Someting at XYZ</small></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!--    Client End   -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--    About End    -->
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        <span>All systems operational // CI/CD Pipeline Active</span>
+      </div>
+      <div>
+        <span>Designed & built by Roshan Bonde &bull; &copy; <span id="current-year"></span></span>
+      </div>
+    </div>
+  </footer>
 
-        <!-- Experience Start -->
-        <section id="portfolio" class="portfolio">
-            <div class="display-table">
-                <div class="display-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="text-center title">
-                                    <h2 class="text-dark">Experience</h2>
-                                    <p class="text-muted mb-3 max-width-450">&nbsp;</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-items row">
-                            <!-- Item 01 -->
-                            <div class="col-lg-4 portfolio-item seo">
-                                <div class="image-border">
-                                    <div class="portfolio-item-content">
-                                        <div class="image-experience">
-                                            <img src="assets/img/html5_css3.png" alt="/">
-                                        </div>
-                                        <h5 class="mb-3 pl-3">HTML & CSS</h5>
-                                        <p class="text-muted pl-4">HTML : 2018 - Present</p>
-                                        <p class="text-muted pl-4">CSS : 2018 - Present</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Item 02 -->
-                            <div class="col-lg-4 portfolio-item graphic webdesign">
-                                <div class="image-border">
-                                    <div class="portfolio-item-content">
-                                        <div class="image-experience">
-                                            <img src="assets/img/php_mysql.png" alt="/">
-                                        </div>
-                                        <h5 class="mb-3 pl-3">PHP & MySQL</h5>
-                                        <p class="text-muted pl-4">PHP : 2019 - Present</p>
-                                        <p class="text-muted pl-4">MySQL : 2019 - Present</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Item 03 -->
-                            <div class="col-lg-4 portfolio-item webdesign graphic">
-                                <div class="image-border">
-                                    <div class="portfolio-item-content">
-                                        <div class="image-experience ">
-                                            <img src="assets/img/backend_dev.png" alt="/">
-                                        </div>
-                                        <h5 class="mb-3 pl-3">Backend Developer</h5>
-                                        <p class="text-muted pl-4">Adhyaaya'20</p>
-                                        <p class="text-muted pl-4">2020 - (2 months)</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-items row">
-                            <!-- Item 01 -->
-                            <div class="col-lg-4 portfolio-item seo">
-                                <div class="image-border">
-                                    <div class="portfolio-item-content">               
-                                        <h5 class="mb-3 mt-3 pl-3">Full Stack Project</h5>
-                                        
-                                        <p class="text-muted pl-4">
-                                            Movie Ticket Booking System
-                                        </p>
-                                        <p class="text-muted pl-4">
-                                            <a href="https://arvrcinema.rf.gd" target="_blank">https://arvrcinema.rf.gd</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--  Experience End  -->
-
-        
-        <!-- Contact Start -->
-        <section id="contact" class="contact">
-            <div class="display-table">
-                <div class="display-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="text-center title">
-                                    <h2 class="text-dark">Get in Touch</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 mt-5 contact-form">
-                                <form id="contactForm" enctype="multipart/form-data">
-                                    <div class="row">
-                                        <div class="col-lg-6 form-item">
-                                            <div class="form-group">
-                                                <input name="name" id="name" type="text" class="form-control" placeholder="Name" required >
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 form-item">
-                                            <div class="form-group">
-                                                <input name="email" id="email" type="email" class="form-control" placeholder="Email" required >
-                                            </div>
-                                        </div>
-                                        <div class="col-12 form-item">
-                                            <div class="form-group">
-                                                <input name="subject" id="subject" type="text" class="form-control" placeholder="Subject" required >
-                                            </div>
-                                        </div>
-                                        <div class="col-12 form-item">
-                                            <div class="form-group">
-                                                <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Your message..."></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 mt-4 text-left">
-                                            <div class="button-border">
-<!--                                                 <button type="submit" class="pill-button" id="submit-btn" value="submit">Send Message</button> -->
-                                                <a href="javascript:void(0)" class="pill-button" id="submit-btn" value="submit">Send Message</a>
-                                            </div>
-                                            <div id="message" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="4000" >
-                                                <div class="toast-body d-inline-block"></div>
-                                                <button type="button" class="pr-3 close" data-dismiss="toast" aria-label="Close">
-                                                    <span aria-hidden="true" class="lni-close size-xs "></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row contact-info">
-                            <div class="col-lg-4 mt-5">
-                                <div class="text-center">
-                                    <div class="base-color">
-                                        <i class="ri-phone-line ri-xl"></i>
-                                    </div>
-                                    <div class="mt-3">
-					    <small class="text-muted"><a href="#phone">+9174480425XX</a></small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 mt-5">
-                                <div class="text-center">
-                                    <div class="base-color">
-                                        <i class="ri-map-pin-line ri-xl"></i>
-                                    </div>
-                                    <div class="mt-3">
-                                        <small class="text-muted">Maharashtra, India.</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 mt-5">
-                                <div class="text-center">
-                                    <div class="base-color">
-                                        <i class="ri-mail-line ri-xl"></i>
-                                    </div>
-                                    <div class="mt-3">
-                                        <small class="text-muted"><a href="mailto: roshanbonde30@gmail.com">roshanbonde30@gmail.com</a></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                            
-                        <div class="row copy-right">
-                            <div class="col-12 text-center">
-                                <ul class="list-inline hero-social">
-                                    <li class="list-inline-item">
-                                        <a href="https://linkedin.com/in/roshan-bonde-760640172">
-                                            <i class="ri-linkedin-box-fill ri-xl"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="https://github.com/roshan-bonde">
-                                            <i class="ri-github-fill ri-xl"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="https://www.facebook.com/roshan.bonde.54/">
-                                            <i class="ri-facebook-box-fill ri-xl"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="https://www.instagram.com/roshanb392/">
-                                            <i class="ri-instagram-line ri-xl"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="https://t.me/roshanb392">
-                                            <i class="ri-telegram-line ri-xl"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-     
-                            <div class="col-12 text-center">
-                                <p>Copyright © 2020 - Created by <span class="base-color"> Roshan Bonde</span></p>
-                                <p>All Rights Reserved</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--  Contact End  -->
-            
-
-    </main>
-
-
-    <!--  JavaScripts  -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.4.1.min.js"></script>
-    <!--  Plugin Js  -->
-    <script src="assets/js/plugins.js"></script>
-    <!--  Custom JS  -->
-    <script src="assets/js/roshan.js"></script>
-
-    </body>
+  <!-- Scripts: Config first, then main client engine -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
